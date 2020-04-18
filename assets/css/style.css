@@ -1,9 +1,3 @@
-/**
-* Template Name: Vlava - v2.0.0
-* Template URL: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -39,35 +33,6 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../logos/black.jpg") top center;
   background-size: cover;
   position: relative;
-}
-
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  display: none;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-}
-
-.back-to-top i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: #85b0be;
-  color: #fff;
-  transition: all 0.4s;
-}
-
-.back-to-top i:hover {
-  background: #6a9fb0;
-  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -144,14 +109,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0 10px 25px;
   transition: 0.3s;
   font-size: 14px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Hack", sans-serif;
   font-weight: 500;
   text-transform: uppercase;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #96bbc7;
-  text-decoration: none;
+  color: red;
+  text-decoration: dotted;
 }
 
 .nav-menu .drop-down ul {
