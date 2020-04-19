@@ -164,5 +164,3 @@
     });
 
 })(jQuery);
-
-//I love Hell
