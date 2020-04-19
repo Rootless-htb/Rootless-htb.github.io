@@ -4,7 +4,21 @@
 
 body {
     font-family: "Open Sans", sans-serif;
-    color: #444444;
+    color: #ffffff;
+}
+
+a.writeups {
+    display: block;
+    position: relative;
+    color: blue;
+    transition: 0.3s;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
+}
+
+a.writeups:hover {
+    color: red;
 }
 
 a {
@@ -122,15 +136,15 @@ h6 {
     padding: 10px 0 10px 25px;
     transition: 0.3s;
     font-size: 14px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-family: "hack", sans-serif;
+    font-weight: bolder;
     text-transform: uppercase;
 }
 
 .nav-menu a:hover,
 .nav-menu .active>a,
 .nav-menu li:hover>a {
-    color: #96bbc7;
+    color: red;
     text-decoration: none;
 }
 
