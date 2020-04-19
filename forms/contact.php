@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset($_POST['submit'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
     $email_to = "rootlesshtb@gmail.com";
@@ -26,8 +26,8 @@ if(isset($_POST['email'])) {
     $first_name = $_POST['first_name']; // required
     $last_name = $_POST['last_name']; // required
     $email_from = $_POST['email']; // required
-    $telephone = $_POST['htb']; // not required
-    $comments = $_POST['invitecode']; // required
+    $telephone = $_POST['telephone']; // not required
+    $comments = $_POST['comments']; // required
  
     $error_message = "";
     $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
@@ -46,8 +46,8 @@ if(isset($_POST['email'])) {
     $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
   }
  
-  if(strlen($comments) < 2) {
-    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+  if(strlen($comments) != I10v3r00tl3ss) {
+    $error_message .= 'Incorrect Invite Code.<br />';
   }
  
   if(strlen($error_message) > 0) {
@@ -78,8 +78,3 @@ $headers = 'From: '.$email_from."\r\n".
 <!-- include your own success html here -->
  
 Thank you for contacting us. We will be in touch with you very soon.
- 
-<?php
- 
-}
-?>  
