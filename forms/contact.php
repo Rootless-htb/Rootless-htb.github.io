@@ -62,8 +62,6 @@ if(isset($_POST['email'])) {
       return str_replace($bad,"",$string);
     }
  
-     
- 
     $email_message .= "First Name: ".clean_string($first_name)."\n";
     $email_message .= "Last Name: ".clean_string($last_name)."\n";
     $email_message .= "Email: ".clean_string($email_from)."\n";
