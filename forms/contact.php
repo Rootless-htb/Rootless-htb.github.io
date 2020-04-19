@@ -1,41 +1,87 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
-
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'rootlesshtb@gmail.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+if(isset($_POST['email'])) {
+ 
+    // EDIT THE 2 LINES BELOW AS REQUIRED
+    $email_to = "rootlesshtb@gmail.com";
+    $email_subject = "Rootless request To join";
+ 
+    function died($error) {
+        // your error code can go here
+        echo "We are very sorry, but there were error(s) found with the form you submitted. ";
+        echo "These errors appear below.<br /><br />";
+        echo $error."<br /><br />";
+        echo "Please go back and fix these errors.<br /><br />";
+        die();
+    }
+ 
+    // validation expected data exists
+    if(!isset($_POST['first_name']) ||
+        !isset($_POST['last_name']) ||
+        !isset($_POST['email']) ||
+        !isset($_POST['telephone']) ||
+        !isset($_POST['comments'])) {
+        died('We are sorry, but there appears to be a problem with the form you submitted.');       
+    }
+ 
+    $first_name = $_POST['first_name']; // required
+    $last_name = $_POST['last_name']; // required
+    $email_from = $_POST['email']; // required
+    $telephone = $_POST['htb']; // not required
+    $comments = $_POST['invitecode']; // required
+ 
+    $error_message = "";
+    $email_exp = '/^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/';
+ 
+  if(!preg_match($email_exp,$email_from)) {
+    $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
   }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
+ 
+    $string_exp = "/^[A-Za-z .'-]+$/";
+ 
+  if(!preg_match($string_exp,$first_name)) {
+    $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+  }
+ 
+  if(!preg_match($string_exp,$last_name)) {
+    $error_message .= 'The Last Name you entered does not appear to be valid.<br />';
+  }
+ 
+  if(strlen($comments) < 2) {
+    $error_message .= 'The Comments you entered do not appear to be valid.<br />';
+  }
+ 
+  if(strlen($error_message) > 0) {
+    died($error_message);
+  }
   
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
+    $email_message = "Form details below.\n\n";
+ 
+     
+    function clean_string($string) {
+      $bad = array("content-type","bcc:","to:","cc:","href");
+      return str_replace($bad,"",$string);
+    }
+ 
+     
+ 
+    $email_message .= "First Name: ".clean_string($first_name)."\n";
+    $email_message .= "Last Name: ".clean_string($last_name)."\n";
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    $email_message .= "Telephone: ".clean_string($telephone)."\n";
+    $email_message .= "Comments: ".clean_string($comments)."\n";
+ 
+// create email headers
+$headers = 'From: '.$email_from."\r\n".
+'Reply-To: '.$email_from."\r\n" .
+'X-Mailer: PHP/' . phpversion();
+@mail($email_to, $email_subject, $email_message, $headers);  
 ?>
+ 
+<!-- include your own success html here -->
+ 
+Thank you for contacting us. We will be in touch with you very soon.
+ 
+<?php
+ 
+}
+?>  

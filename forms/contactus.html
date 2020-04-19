@@ -9,6 +9,9 @@
     <meta content="" name="descriptison">
     <meta content="" name="keywords">
     <link href="/assets/logos/icon.jpg" rel="icon">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="/https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
@@ -27,13 +30,13 @@
                 <li class="active"><a href="/index.html">Home</a></li>
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/teams.html">Team</a></li>
+                <li><a href="">Contact Us</a></li>
                 <li class="drop-down"><a href="">Writeups</a>
                     <ul>
                         <li><a href="/writeups/hackthebox.html">Hack The Box</a></li>
                         <li><a href="/writeups/WPICTF2020.html">WPI CTF 2020</a></li>
                     </ul>
                 </li>
-                <li><a href="">Contact Us</a></li>
             </ul>
         </nav>
     </div>
@@ -41,10 +44,55 @@
 
 
 <body style="background-color: black;">
-
-
-
-
+    <form name="contactform" method="post" action="send_form_email.php" style="padding-left: 20%; padding-top: 10%;">
+        <table width="450px">
+            <tr>
+                <td valign="top">
+                    <label for="first_name">First Name *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="first_name" maxlength="50" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <label for="last_name">Last Name *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="last_name" maxlength="50" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <label for="email">Email Address *</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="email" maxlength="80" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <label for="htb">Hack The Box Profile Link</label>
+                </td>
+                <td valign="top">
+                    <input type="text" name="telephone" maxlength="30" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td valign="top">
+                    <label for="Invite Code">Invite Code</label>
+                </td>
+                <td valign="top">
+                    <textarea name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
 
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
