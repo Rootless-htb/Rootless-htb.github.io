@@ -351,15 +351,6 @@ next hint: is in about.html
     position: relative;
 }
 
-#hero:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
 #hero .hero-container {
     position: absolute;
     bottom: 0;
