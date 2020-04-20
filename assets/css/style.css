@@ -8,7 +8,7 @@ body {
 }
 
 a {
-    color: red;
+    color: blue;
 }
 
 a:hover {
@@ -28,6 +28,14 @@ h6 {
 .hi {
     width: 100%;
     height: 200vh;
+    background: url("../logos/wall.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
+.hi1 {
+    width: 100%;
+    height: 100vh;
     background: url("../logos/wall.jpg") top center;
     background-size: cover;
     position: relative;
@@ -463,7 +471,7 @@ next hint: is in about.html
     font-weight: 500;
     line-height: 32px;
     font-size: 24px;
-    color: #4d8090;
+    color: white;
 }
 
 .about .content ul {
