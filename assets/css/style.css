@@ -25,6 +25,14 @@ h6 {
     font-family: "Raleway", sans-serif;
 }
 
+.hi {
+    width: 100%;
+    height: 200vh;
+    background: url("../logos/wall.jpg") top center;
+    background-size: cover;
+    position: relative;
+}
+
 
 /*--------------------------------------------------------------
 # Header

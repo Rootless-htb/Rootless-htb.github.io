@@ -110,7 +110,7 @@
             $("#subject").css('border', '#e66262 1px solid');
             valid = false;
         }
-        if (content != "I10v3r00tl3ss") {
+        if (content == "") {
             $("#userMessage-info").html("Incorrect");
             $("#content").css('border', '#e66262 1px solid');
             valid = false;
