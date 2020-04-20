@@ -59,8 +59,10 @@
                         <h3 style="color: red;font-size: 24px; ">Upcoming CTF's</h3>
                         <br>
                         <h3 style="color: white;">- <a href="https://riceteacatpanda.wtf/">Houseplant CTF</a>'20</h3>
+                        <p id="demo" style="color: white;  text-shadow: 2px 2px 5px red;"></p>
                         <span>April 24 2020, 19:00 UTC - April 26 2020, 19:00 UTC</span>
                         <h3 style="color: white;">- <a href="https://de1ctf.de1ta.club/">De1CTF</a>'20</h3>
+                        <p id="demo1" style="color: white;  text-shadow: 2px 2px 5px red;"></p>
                         <span>May 02 2020, 01:00 UTC - May 04 2020, 01:00 UTC</span>
                         <br>
                         <br>
@@ -74,3 +76,25 @@
 </body>
 
 </html>
+<script>
+    var countDownDate = new Date("April 25, 2020  03:00:00").getTime();
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+            minutes + "m " + seconds + "s ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
