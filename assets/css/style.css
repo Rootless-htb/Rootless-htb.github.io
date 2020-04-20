@@ -353,7 +353,6 @@ next hint: is in about.html
 
 #hero:before {
     content: "";
-    background: rgba(5, 44, 63, 0.5);
     position: absolute;
     bottom: 0;
     top: 0;
