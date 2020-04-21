@@ -33,7 +33,6 @@
                     <ul>
                         <!--Are You r00tless enough??-->
                         <li><a href="/writeups/hackthebox.html">Hack The Box</a></li>
-                        <li><a href="/writeups/WPICTF2020.html">WPI CTF 2020</a></li>
                     </ul>
                 </li>
             </ul>
@@ -61,25 +60,7 @@
 
 </html>
 
-<script>
-    var countDownDate = new Date("April 24, 2020 19:00:00").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("demo ").innerHTML = days + "d " + hours + "h " +
-            minutes + "m " + seconds + "s ";
-
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo ").innerHTML = "EXPIRED ";
-        }
-    }, 1000);
-</script>
-
+<script src="/assets/js/ctf1.js"></script>
 <script src="assets/vendor/jquery/jquery.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
