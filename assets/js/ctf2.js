@@ -1,7 +1,7 @@
-var countDownDate1 = new Date("May 02, 2020  1:00:00").getTime();
+var countDownDate2 = new Date("May 09, 2020  00:01:00").getTime();
 var x = setInterval(function() {
     var now = new Date().getTime();
-    var distance = countDownDate1 - now;
+    var distance = countDownDate2 - now;
 
 
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -10,11 +10,11 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
-    document.getElementById("demo1").innerHTML = days + "d " + hours + "h " +
+    document.getElementById("demo2").innerHTML = days + "d " + hours + "h " +
         minutes + "m " + seconds + "s ";
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo1").innerHTML = "EXPIRED";
+        document.getElementById("demo2").innerHTML = "EXPIRED";
     }
 }, 1000);
