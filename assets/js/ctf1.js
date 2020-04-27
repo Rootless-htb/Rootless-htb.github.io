@@ -15,6 +15,6 @@ var x = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo1").innerHTML = "EXPIRED";
+        document.getElementById("demo1").innerHTML = "ONGOING";
     }
 }, 1000);
