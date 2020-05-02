@@ -511,7 +511,7 @@ h6 {
 
 .team .member .member-img {
     position: relative;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .team .member .social {
